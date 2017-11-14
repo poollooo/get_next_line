@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tburnouf <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pnizet <pnizet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/28 15:30:09 by tburnouf          #+#    #+#             */
-/*   Updated: 2017/10/28 15:30:10 by tburnouf         ###   ########.fr       */
+/*   Created: 2017/10/28 15:30:09 by pnizet            #+#    #+#             */
+/*   Updated: 2017/11/14 15:06:43 by pnizet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char			*ft_strjoinch(char const *s1, char c)
 	char	*str;
 	size_t	i;
 	size_t	len;
-	
+
 	if (!s1 || !c)
 		return (NULL);
 	len = ft_strlen(s1);
@@ -36,7 +36,7 @@ int				ft_copyuntil(char **dst, char *src, char c)
 	int	i;
 	int	count;
 	int	pos;
-	
+
 	i = -1;
 	count = 0;
 	while (src[++i])
@@ -57,7 +57,7 @@ int				ft_copyuntil(char **dst, char *src, char c)
 static t_list	*correct_file(t_list **file, int fd)
 {
 	t_list	*tmp;
-	
+
 	tmp = *file;
 	while (tmp)
 	{
@@ -78,7 +78,7 @@ int				get_next_line(const int fd, char **line)
 	int				i;
 	int				ret;
 	t_list			*curr;
-	
+
 	if ((fd < 0 || line == NULL || read(fd, buf, 0) < 0)
 		|| !(*line = ft_strnew(1)))
 		return (-1);
